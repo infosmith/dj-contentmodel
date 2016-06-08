@@ -29,7 +29,9 @@ Then use it in a project::
 Features
 --------
 
-* TODO
+* Hierarchical taxonomies.
+* Content collections with many to many relationship with taxa.
+* Templates
 
 Running Tests
 --------------
