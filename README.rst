@@ -2,11 +2,6 @@
 dj-contentmodel
 =============================
 
-.. image:: https://badge.fury.io/py/dj-contentmodel.png
-    :target: https://badge.fury.io/py/dj-contentmodel
-
-.. image:: https://travis-ci.org/infosmith/dj-contentmodel.png?branch=master
-    :target: https://travis-ci.org/infosmith/dj-contentmodel
 
 Pluggable app for hierarchical taxonomies, content collections, and navigation.
 
@@ -34,7 +29,8 @@ Features
 Running Tests
 --------------
 
-Does the code actually work?
+Does the code actually work? For now, I've got my fingers crossed. Later iterations will be
+test driven including unit, integration, and performance testing.
 
 ::
 
@@ -49,6 +45,12 @@ Tools used in rendering this package:
 
 *  Cookiecutter_
 *  `cookiecutter-djangopackage`_
+*  `django-mptt`_
+*  `django-taggit`_
+*  `pip-tools`_
 
 .. _Cookiecutter: https://github.com/audreyr/cookiecutter
 .. _`cookiecutter-djangopackage`: https://github.com/pydanny/cookiecutter-djangopackage
+.. _`django-mptt`: https://github.com/django-mptt/django-mptt
+.. _`django-taggit`: https://github.com/alex/django-taggit
+.. _`pip-tools`: https://github.com/nvie/pip-tools

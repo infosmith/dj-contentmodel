@@ -1,0 +1,22 @@
+{% load mptt_tags %}
+{% load staticfiles %}
+<h1>Navigation Tree</h1>
+<ul>
+    {% recursetree nodes %}
+    <li>
+        <a href="{{ node.id }}">{{ node.name }}</a>
+        {% if not node.is_leaf_node %}
+        <ul class="children">
+            {{ children }}
+        </ul>
+        {% endif %}
+        {% if node.collections.contents.count > 0 %}
+        <ul>
+            {% for content in node.collections.contents.prefetch_related %}
+                <li>{{ content.name }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    </li>
+    {% endrecursetree %}
+</ul>

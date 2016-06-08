@@ -1,0 +1,27 @@
+{% load mptt_tags %}
+{% load staticfiles %}
+<h1>Content Tree</h1>
+<ul>
+    {% recursetree nodes %}
+        <li>
+            <a href="{{ node.id }}">{{ node.name }}</a>
+            {% if not node.is_leaf_node %}
+                <ul class="children">
+                    {{ children }}
+                </ul>
+            {% endif %}
+            {% if node.collections  %}
+                <ul>
+                    <!--first loop-->
+                    {% for collection in node.collections.all %}
+                        <!--second loop-->
+                        {% for content in collection.contents.all %}
+                            <!--third loop-->
+                           <li>{{ content.name }}</li>
+                        {% endfor %}
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </li>
+    {% endrecursetree %}
+</ul>

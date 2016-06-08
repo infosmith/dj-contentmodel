@@ -1,0 +1,4 @@
+django>=1.9.6
+django-mptt
+django-taggit
+django-model-utils>=2.0
