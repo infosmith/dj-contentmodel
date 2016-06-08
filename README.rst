@@ -17,6 +17,11 @@ Install dj-contentmodel::
 
     pip install dj-contentmodel
 
+Create initial content model tables if Sitemap, Collection, and Page
+will be used.
+
+    python manage.py migrate --run-syncdb
+
 Then use it in a project::
 
     import dj_contentmodel
