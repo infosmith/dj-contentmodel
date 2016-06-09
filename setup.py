@@ -44,7 +44,7 @@ history = open('HISTORY.rst').read().replace('.. :changelog:', '')
 setup(
     name='dj-contentmodel',
     version=version,
-    description="""Pluggable app for hierarchical taxonomies, content collections, and navigation.""",
+    description="""Pluggable app for taxonomies, content collections, and navigation.""",
     long_description=readme + '\n\n' + history,
     author='David S.',
     author_email='infosmith@protonmail.com',
@@ -54,7 +54,7 @@ setup(
     ],
     include_package_data=True,
     install_requires=["django-model-utils>=2.0",],
-    license="MIT",
+    license="BSD",
     zip_safe=False,
     keywords='dj-contentmodel',
     classifiers=[

@@ -18,18 +18,3 @@ admin.site.register(
         'indented_title',
     ),
 )
-
-
-admin.site.register(
-    Sitemap,
-    DraggableMPTTAdmin,
-    list_display=(
-        'tree_actions',
-        'indented_title',
-    ),
-    list_display_links=(
-        'indented_title',
-    ),
-)
-admin.site.register(Collection)
-admin.site.register(Page)
