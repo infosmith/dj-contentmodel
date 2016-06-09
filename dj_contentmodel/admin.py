@@ -5,7 +5,7 @@ Group is the only required AdminManager.
 """
 from django.contrib import admin
 from mptt.admin import DraggableMPTTAdmin
-from .models import Group, Sitemap, Collection, Page
+from .models import Group
 
 admin.site.register(
     Group,
