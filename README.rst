@@ -1,6 +1,6 @@
-=============================
+===============
 dj-contentmodel
-=============================
+===============
 
 
 Boilerplate for taxonomies, content collections, and content models using django-mptt and django-taggit.
@@ -74,7 +74,7 @@ Without a migration, it may be necessary to create the tables.::
 
 
 Running Tests
---------------
+-------------
 
 Does the code actually work? For now I have my fingers crossed.
 Later iterations will be test driven and include integration and performance testing.
@@ -85,7 +85,7 @@ Later iterations will be test driven and include integration and performance tes
     (myenv) $ python runtests.py
 
 Credits
----------
+-------
 
 Tools used in rendering this package:
 
