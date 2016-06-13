@@ -55,7 +55,12 @@ The names of defined classes are arbitrary, but the relationships among classes 
     class Report(Attachment):
         parents = models.ManyToManyField('Page', blank=True)
         ...
-Finally, register your models with the admin.::
+
+Finally, register your models with the admin.
+::
+
+    from django.contrib import admin
+    from mptt.admin import DraggableMPTTAdmin
 
     admin.site.register(
         Sitemap,
@@ -68,6 +73,7 @@ Finally, register your models with the admin.::
     admin.site.register(Bucket)
     admin.site.register(Page)
     admin.site.register(Report)
+
 Without a migration, it may be necessary to create the tables.::
 
     python manage.py migrate --run-syncdb
@@ -89,7 +95,7 @@ Credits
 
 Tools used in rendering this package:
 
-*  Cookiecutter_
+*  `Cookiecutter`_
 *  `cookiecutter-djangopackage`_
 *  `django-mptt`_
 *  `django-taggit`_

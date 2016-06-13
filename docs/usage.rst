@@ -25,25 +25,20 @@ The following example is of a minimum configuration.
 The names of defined classes are arbitrary, but the relationships among classes are not.
 ::
 
-    class Sitemap(Taxonomy):
+    class Sitemap(AbstractTaxonomy):
         """Main navigation"""
-        collections = models.ManyToManyField('Bucket', blank=True)
-        class Meta:
-            verbose_name = "Category"
-            verbose_name_plural = "Categories"
-        ...
+        collections = models.ManyToManyField('Collection', blank=True)
 
-    class Bucket(Collection):
+    class Collection(AbstractCollection):
         """Arbitrary collections to group content."""
         contents = models.ManyToManyField('Page', blank=True)
-        ...
 
-    class Page(Content):
-        ...
+    class Page(AbstractContent):
+        body = models.TextField(blank=True, null=True)
 
-    class Report(Attachment):
+    class Attachment(AbstractAttachment):
         parents = models.ManyToManyField('Page', blank=True)
-        ...
+
 
 After creating your models register the subclass of Taxonomy using
 DraggableMPTTAdmin. Collection, Content, and Attachment subclasses do
@@ -52,7 +47,7 @@ not require customization.
 
     from django.contrib import admin
     from mptt.admin import DraggableMPTTAdmin
-    from .models import Sitemap, Collection, Page
+    from .models import Sitemap, Collection, Page, Attachment
     admin.site.register(
         Sitemap,
         DraggableMPTTAdmin,
@@ -61,14 +56,15 @@ not require customization.
             'indented_title',),
         list_display_links=(
             'indented_title',),)
-    admin.site.register(Bucket)
+    admin.site.register(Collection)
     admin.site.register(Page)
-    admin.site.register(Report)
+    admin.site.register(Attachment)
 
 Without a migration, it may be necessary to create the tables using syncdb.
 ::
 
     python manage.py migrate --run-syncdb
+    python manage.py migrate dj-contentmodel
 
 
 Once a taxonomy is defined and registered in the admin, create your views.

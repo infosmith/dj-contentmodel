@@ -5,10 +5,10 @@ Group is the only required AdminManager.
 """
 from django.contrib import admin
 from mptt.admin import DraggableMPTTAdmin
-from .models import Group
+from .models import Role
 
 admin.site.register(
-    Group,
+    Role,
     DraggableMPTTAdmin,
     list_display=(
         'tree_actions',
