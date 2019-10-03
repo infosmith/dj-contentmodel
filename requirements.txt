@@ -4,8 +4,8 @@
 #
 #    pip-compile --output-file requirements.txt requirements.in
 #
-
 django-model-utils==2.5
 django-mptt==0.8.4
 django-taggit==0.19.1
-django==1.9.7
+django==1.11.23
+pytz==2019.2
